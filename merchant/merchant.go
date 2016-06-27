@@ -41,6 +41,9 @@ func init() {
 			writeSandboxRouter.POST("/discount", InsertDiscount)
 			writeSandboxRouter.POST("/installment", InsertInstallment)
 		}
+		sandboxRouter.POST("/auth", GenerateAuth)
+		sandboxRouter.GET("/card", GetCards)
+		sandboxRouter.POST("/card/register", RegisterCard)
 	}
 
 	productionRouter := router.Group("/api-prod")
@@ -52,6 +55,9 @@ func init() {
 			writeProductionRouter.POST("/discount", InsertDiscountProduction)
 			writeProductionRouter.POST("/installment", InsertInstallmentProduction)
 		}
+		productionRouter.POST("/auth", GenerateAuthProduction)
+		productionRouter.GET("/card", GetCardsProduction)
+		productionRouter.POST("/card/register", RegisterCardProduction)
 	}
 
 	http.Handle("/", router)
