@@ -1,6 +1,9 @@
 # Reference Merchant Server for Veritrans Mobile SDK
 
-This is a testing server for the development of Veritrans Mobile SDK. Also acts as a reference implementation for the methods to be implemented by merchants to use the mobile SDK.
+This is a testing server for the development of Veritrans Mobile SDK. 
+Also acts as a reference implementation for the methods to be implemented by merchants to use the mobile SDK.
+
+This is alternative implementation of official [Mobile-Merchant-Server](https://github.com/veritrans/mobile-merchant-server) in Go.
 
 ## Implementation
 
