@@ -67,6 +67,7 @@ To handle promotion, there are several endpoint to be implemented.
 - **Headers**
     - Admin-Token: __MERCHANT_ADMIN_TOKEN__
 - **Request**
+
     ```
     {
         "title": "Discount Title",
@@ -77,7 +78,9 @@ To handle promotion, there are several endpoint to be implemented.
         ]
     }
     ```
+
 - **Response**
+
     ```
     {
       "status_code" : 201,
@@ -93,6 +96,7 @@ To handle promotion, there are several endpoint to be implemented.
 
 - **Endpoint** : `GET /api/promotions`
 - **Response** :
+
     ```
     {
         "data": {
@@ -120,6 +124,7 @@ So merchant server needs to provide endpoint to Save card, get card list and rem
 
 - **Endpoint** : `POST /api/card/register`
 - **Request**
+
     ```
     {
         "status_code" : "200",
@@ -127,7 +132,9 @@ So merchant server needs to provide endpoint to Save card, get card list and rem
         "saved_token_id" : "4ioasfaslk490asfakj"
     }
     ```
+    
 - **Response**
+
     ```
     {
         "status_code" : 201,
@@ -141,6 +148,7 @@ So merchant server needs to provide endpoint to Save card, get card list and rem
 - **Headers**
     - X-Auth : __Authentication-Token__
 - **Response**
+
     ```
     {
       "data": [
