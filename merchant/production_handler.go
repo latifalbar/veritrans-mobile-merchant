@@ -26,7 +26,7 @@ func ChargeProduction(c *gin.Context) {
 	request, err := http.NewRequest("POST", VTBaseURLProduction+"/charge", c.Request.Body)
 
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"status_code": "400", "status_message": "Bad Request"})
+		c.JSON(http.StatusBadRequest, gin.H{"status_code": http.StatusBadRequest, "status_message": err.Error()})
 	} else {
 		request.Header.Add("Content-Type", "application/json")
 		request.Header.Add("Accept", "application/json")
@@ -93,7 +93,7 @@ func InsertDiscountProduction(c *gin.Context) {
 	} else {
 		c.JSON(http.StatusCreated, gin.H{
 			"status_code":    http.StatusCreated,
-			"status_message": "Discount created",
+			"status_message": "Discount created.",
 		})
 	}
 
@@ -117,7 +117,7 @@ func InsertInstallmentProduction(c *gin.Context) {
 	} else {
 		c.JSON(http.StatusCreated, gin.H{
 			"status_code":    http.StatusCreated,
-			"status_message": "Installment created",
+			"status_message": "Installment created.",
 		})
 	}
 }
@@ -188,7 +188,7 @@ func RegisterCardProduction(c *gin.Context) {
 				if _, err := datastore.Put(appEngine, key, &card); err != nil {
 					c.JSON(http.StatusBadGateway, gin.H{"status_code": http.StatusBadGateway, "status_message": err.Error()})
 				} else {
-					c.JSON(http.StatusCreated, gin.H{"status_code": http.StatusOK, "status_message": "Card is saved."})
+					c.JSON(http.StatusCreated, gin.H{"status_code": http.StatusCreated, "status_message": "Card is saved."})
 				}
 			} else {
 				c.JSON(http.StatusConflict, gin.H{"status_code": http.StatusConflict, "status_message": "The card with same token ID is already present."})
